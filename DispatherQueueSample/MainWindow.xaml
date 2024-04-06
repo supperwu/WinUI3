@@ -9,7 +9,8 @@
     mc:Ignorable="d">
 
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click" Content="Update text"/>
-        <TextBlock x:Name="DateTimeTextBlock"/>
+        <Button  Command="{x:Bind ViewMoel.UpdateTextCommand, Mode=OneWay}" Content="Update text"/>
+        <TextBlock x:Name="DateTimeTextBlock" Text="{x:Bind ViewMoel.Text,Mode=OneWay}"/>
     </StackPanel>
 </Window>
+ 

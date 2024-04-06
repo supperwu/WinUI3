@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -28,9 +29,17 @@ namespace DispatherQueueSample
             this.InitializeComponent();
         }
 
-        private void myButton_Click(object sender, RoutedEventArgs e)
+        public MainWindowViewMoel ViewMoel { get; } = new();
+
+        private async void myButton_Click(object sender, RoutedEventArgs e)
         {
-            DateTimeTextBlock.Text = DateTime.Now.ToString();
+            await Task.Run(() =>
+            {
+                DispatcherQueue.TryEnqueue(() =>
+                {
+                    DateTimeTextBlock.Text = DateTime.Now.ToString();
+                });
+            });
         }
     }
 }
