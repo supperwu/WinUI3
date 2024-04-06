@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DispatherQueueSample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DispatherQueueSample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
