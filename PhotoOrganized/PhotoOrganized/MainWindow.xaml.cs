@@ -11,6 +11,9 @@ public sealed partial class MainWindow : Window
     public MainWindow()
     {
         this.InitializeComponent();
+        Title = "Photo Organizer";
+        ExtendsContentIntoTitleBar = true;
+        SetTitleBar(TitleBar);
     }
 
 }
