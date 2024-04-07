@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
+using PhotoOrganized.ViewModels;
 
 
 namespace PhotoOrganized;
@@ -18,6 +19,7 @@ public partial class App : Application
     {
         this.InitializeComponent();
         var serviceProvider = new ServiceCollection()
+            .AddSingleton<MainWindowViewModel>()
             .BuildServiceProvider();
         Ioc.Default.ConfigureServices(serviceProvider);
     }

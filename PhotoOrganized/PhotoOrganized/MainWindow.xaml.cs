@@ -1,4 +1,6 @@
+using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.UI.Xaml;
+using PhotoOrganized.ViewModels;
 
 
 namespace PhotoOrganized;
@@ -14,6 +16,14 @@ public sealed partial class MainWindow : Window
         Title = "Photo Organizer";
         ExtendsContentIntoTitleBar = true;
         SetTitleBar(TitleBar);
+
+        ViewModel = Ioc.Default.GetService<MainWindowViewModel>();
     }
 
+    public MainWindowViewModel? ViewModel { get; set; }
+
+    private void StartButton_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
 }
